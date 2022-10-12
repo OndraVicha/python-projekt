@@ -158,3 +158,36 @@ funkční kód, tím lepší).
 3. Vytvořte funkci, která vygeneruje náhodná hesla pro počet osob zadaný v parametru tak, aby heslo začínalo
    3 velkými písmeny, pokračovalo 3 malými písmeny, jedním speciálním znakem (-/+*) a končilo 3 náhodnými číslicemi.
 '''
+
+import datetime
+date = datetime.datetime(2014,7,13,0,0)
+date.strftime("%Y-%m-%d")
+print(date)
+
+text = 'To Je Proměnná V Pythonu'
+pomocna = 1
+for i in range (1,3):
+    if i == pomocna:
+        print("")
+        print(text.replace(" ",""))
+        print("")
+    else:
+        print(text.replace(" ","_"))
+        print("")
+
+import random
+import string
+def get_random_string(length):
+    pocet = 4
+    for i in range (pocet):
+        velke = string.ascii_uppercase
+        male = string.ascii_lowercase
+        znak = string.punctuation
+        cislo = string.digits
+        vysledek_velke = ''.join(random.choice(velke) for i in range(length))
+        vysledek_male = ''.join(random.choice(male) for i in range(length))
+        vysledek_znak = ''.join(random.choice(znak))
+        vysledek_cislo = ''.join(random.choice(cislo) for i in range(length))
+        print("Heslo je", vysledek_velke+vysledek_male+vysledek_znak+vysledek_cislo)
+
+get_random_string(3)

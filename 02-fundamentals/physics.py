@@ -6,11 +6,16 @@ V Pythonu jsou konstanty obvykle deklarovány a přiřazovány v modulu, který 
 Konstanty jsou pojmenovány velkými písmeny a jednotlivá slova jsou oddělována podtržítky.
 '''
 
-EARTH_GRAVITY = 0 #? normální pozemské tíhové zrychlení
-MOON_GRAVITY = 0 #? měsíční gravitace
-SPEED_OF_LIGHT = 0 #? rychlost světla ve vakuu
-SPEED_OF_SOUND = 0 #? rychlost zvuku při teplotě 20 °C v suchém vzduchu
+import math
 
+def zeme(pad):
+    print("Těleso bylo vyhozeno z výšky 70 metrů na Zemi. Na zem dopadne rychlostí %4.2f metrů za sekundu"%pad)
+def mesic(pad2):
+    print("Těleso bylo vyhozeno z výšky 70 metrů na Měsíci. Na zem dopadne rychlostí %4.2f metrů za sekundu"%pad2)
+def svetlo(cas,minuty,sekundy):
+    print("Sluneční paprsky dopadnou na Zemi za {} sekund to je {} minut a {} sekund".format(cas,minuty,sekundy))
+def zvuk(metry):
+    print("Blesk který jsme slyšeli 4 vteřiny po tom co jsme jej uviděli je vzdálen %d metrů"%metry)
 ''' 
 Úkol:
 1. Doplňte správně hodnoty uvedených konstant.
