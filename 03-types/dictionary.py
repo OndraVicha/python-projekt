@@ -5,8 +5,8 @@ klíč (angl. key) a hodnotu (angl. value).
 Každému klíči je přiřazena jedna hodnota.
 '''
 
-# Collection which is unordered, changeable and indexed.
-# In Python dictionaries are written with curly brackets, and they have keys and values.
+# Kolekce, která je neuspořádaná, proměnlivá a indexovaná.
+# V jazyce Python se slovníky zapisují pomocí kudrnatých závorek a mají klíče a hodnoty.
 car = {
   'brand': 'Ford',
   'model': 'Mustang',
@@ -32,10 +32,10 @@ print(f'point.get("x"): {point.get("x")}')
 if 'z' in point:
     print(f'point.get("z"): {point.get("z")}')
 
-# Když hodnota neexistuje, vrací 0    
+# Když hodnota neexistuje, vrací 0
 print(f'point.get("v", 0): {point.get("v", 0)}')
 
-# Odstranění prvku ze slovníku  
+# Odstranění prvku ze slovníku
 del point['x']
 print(f'point: {point}')
 
@@ -48,7 +48,7 @@ print(f'car.popitem(): {car.popitem()}')
 for key, value in point.items():
     print(f'{key} - {value}')
 
-# Dictionary comprehension - zkráceně vytvoří slovník, jehož klíče tvoří čísla od 0 do 9 a hodnoty druhé mocniny 
+# Dictionary comprehension - zkráceně vytvoří slovník, jehož klíče tvoří čísla od 0 do 9 a hodnoty druhé mocniny
 values = {x: x ** 2 for x in range(10)}
 print(f'values: {values}')
 
@@ -94,3 +94,42 @@ child3          Linus               2011
 ---------------------------------------------
 Počet záznamů: 3
 '''
+films = {
+  'film1' : {
+    'name': 'The Lord of the Rings: The Fellowship of the Rings',
+    'year': 2001,
+    'watched': True,
+    'genre': ('fantasy','novel'),
+    'characters': {'Frodo','Gandalf','Aragorn','Gimli'},
+    'rating': [9.8,9.4]
+  },
+  'film2': {
+    'name': 'Twilight Saga: Twilight',
+    'year': 2008,
+    'watched': False,
+    'genre': ('fantasy','thriller'),
+    'characters': {'Edward','Jacob','Bella'},
+    'rating': [7.5, 7.6,7.1]
+  },
+  'film3': {
+    'name': 'Star Wars: Episode III - Revenge of the Sith',
+    'year': 2005,
+    'watched': True,
+    'genre': ('sci-fi', 'fantasy'),
+    'characters': {'Anakin', 'Obi-wan'},
+    'rating': [9.9, 10]
+  }
+}
+
+films['film3']['characters'].add('Timmy')
+del films['film2']['year']
+
+print("\nslovnik films")
+print("-" * 145)
+print ("{:<10} {:<60} {:<10} {:<10} {:<20} {:<32} {:<5}".format('film','name','year','watched','genre','characters','rating'))
+print("-" * 145)
+for k, info in films.items():
+  print("{:<10} {:<60} {:<10} {:<10} {:<20} {:<32} {:<5}".format(k,str(info['name']),str(info['year']) if 'year' in info else '----',str(info['watched']),
+  ','.join(str(x) for x in info['genre']),','.join(str(x) for x in info['characters']),','.join(str(x) for x in info['rating'])))
+print("-" * 145)
+print("Počet záznamů:", len(films))

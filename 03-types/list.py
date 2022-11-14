@@ -285,8 +285,21 @@ print(f'\tSbalení seznamů do proměnné values: {values}\n')
 from random import randint
 
 print(f'\n*************************************\nCvičení 2\n*************************************')
+hundreds = [i for i in range(1,2001) if i % 200 == 0]
+print(hundreds)
 
-
+import random
+import string
+pismena = string.ascii_uppercase
+ascii = [random.choice(pismena) for i in range(50)]
+print(ascii, len(ascii))
+hundreds1 = hundreds[3:-3]
+print(hundreds1)
+letters = [chr for chr in ascii if ascii.count(chr) == 1]
+print(letters)
+combine = ascii[:len(hundreds)]
+list_of_tuples = [(hundreds[i], combine[i]) for i in range(0, len(hundreds))]
+print(list_of_tuples)
 
 # ??? 3. cvičení ???
 # a) Přidejte do listu persons ještě n-tice (tuples) dalších 2 žen a 2 mužů.
@@ -298,3 +311,14 @@ print(f'\n*************************************\nCvičení 2\n******************
 # Záznamy budou seřazeny podle věku (sestupně).
 
 print(f'\n*************************************\nCvičení 3\n*************************************')
+persons.extend([('Milada', 50, 'žena'), ('Karel', 20, 'muž'), ('Jana', 21, 'žena'), ('Ivan', 40, 'muž'), ('Josef', 38, 'muž'), ('Martin', 18, 'muž'), ('Petra', 68, 'žena'), ('Jiřina', 17, 'žena')])
+print(persons)
+
+women = [i[0] for i in persons if (i[2] == "žena")]
+women2 = list(filter(lambda item: item[2] == "žena",persons))
+print(*[i+f"\n{'-'*len(i)}\n" for i in women])
+
+ipeople = [i for i in persons if ("i" in i[0])]
+ipeople2 = list(filter(lambda item: "i" in item[0], persons))
+
+print(*[f"{index};{item[0]};{item[1]};{item[2]}\n" for index, item in enumerate(ipeople)])

@@ -1,6 +1,6 @@
 '''
 Tuples - neměnitelné n-tice hodnot (seřazený seznam prvků)
-In Python tuples are written with round brackets.
+V jazyce Python se tuply zapisují pomocí kulatých závorek.
 '''
 
 # Vytvoření tuples
@@ -12,24 +12,24 @@ chars = tuple('Hello world')
 print('chars: ', chars)
 print('Type(chars): ',type(chars))
 
-# To create a tuple with only one item, you have add a comma after the item, unless Python will not recognize the variable as a tuple.
+# Chcete-li vytvořit tuple s jedinou položkou, musíte za položku přidat čárku, pokud Python tuto proměnnou nerozpozná jako tuple.
 colors = ('red',)
 print('colors: ', colors)
 
 # Součet tuples
 print(f'chars + numbers: {chars + numbers}')
 
-# Výpis hodnot 
-# You can specify a range of indexes by specifying where to start and where to end the range.
-# When specifying a range, the return value will be a new tuple with the specified items.
+# Výpis hodnot
+# Rozsah indexů můžete zadat tak, že určíte, kde má rozsah začínat a kde končit.
+# Při zadání rozsahu bude návratovou hodnotou nový tuple se zadanými položkami.
 print(f'chars[2:5]: {chars[2:5]}')
 
-# Negative indexing means beginning from the end, -1 refers to the last item, -2 refers to the second last item etc.
-# Specify negative indexes if you want to start the search from the end of the tuple: 
-# This example returns the items from index -4 (included) to index -1 (excluded)
+# Záporné indexování znamená, že se začíná od konce, -1 označuje poslední položku, -2 označuje předposlední položku atd.
+# Pokud chcete začít hledat od konce tuplu, zadejte záporné indexy:
+# Tento příklad vrátí položky od indexu -4 (zahrnuty) do indexu -1 (vyloučeny).
 print(f'chars[-4:-1]: {chars[-4:-1]}')
 
-# To determine how many items a tuple has, use the len() method:
+# Chcete-li zjistit, kolik položek má tuple, použijte metodu len():
 print(f'len(chars): {len(chars)}')
 
 # Zjištění prvního výskytu a počtu výskytu prvku

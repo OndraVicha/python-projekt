@@ -18,28 +18,28 @@ chars = sorted(list('Hello world'))
 set_chars = set(chars)
 print(f'Uspořádaná množina (set) jedinečných hodnot: {set_chars}')
 
-# Once a set is created, you cannot change its items, but you can add new items. 
-# To add one item to a set use the add() method.
+# Jakmile je sada vytvořena, nemůžete její položky měnit, ale můžete přidávat nové položky.
+# Pro přidání jedné položky do sady použijte metodu add().
 set_chars.add('V')
 
-# To add more than one item to a set use the update() method.
+# Chcete-li do sady přidat více než jednu položku, použijte metodu update().
 set_chars.update('X', 'Y', 'Z')
 
-# To remove an item in a set, use the remove(), or the discard() method.
+# Chcete-li odstranit položku z množiny, použijte metodu remove() nebo discard().
 set_chars.remove('H')
 print(f'Proměnná set_chars: {set_chars}')
 
-# The clear() method empties the set 
+# Metoda clear() vyprázdní množinu
 set_chars.clear()
 
-# The del keyword will delete the set completely:
+# Klíčové slovo del sadu zcela odstraní:
 del set_chars
 
 # Přístup k hodnotám množiny
-# You cannot access items in a set by referring to an index, since sets are unordered the items has no index.
+# K položkám v množině nelze přistupovat odkazem na index, protože množiny jsou neuspořádané, položky nemají žádný index.
 # my_set[1]
 
-# But you can loop through the set items using a for loop, or ask if a specified value is present in a set, by using the in keyword.
+# Položky množiny však můžete procházet pomocí cyklu for nebo se pomocí klíčového slova in zeptat, zda se zadaná hodnota v množině vyskytuje.
 for x in my_set:
   print(x)
 
