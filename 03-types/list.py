@@ -318,7 +318,6 @@ women = [i[0] for i in persons if (i[2] == "žena")]
 women2 = list(filter(lambda item: item[2] == "žena",persons))
 print(*[i+f"\n{'-'*len(i)}\n" for i in women])
 
-ipeople = [i for i in persons if ("i" in i[0])]
-ipeople2 = list(filter(lambda item: "i" in item[0], persons))
+ipeople = list(filter(lambda item: "i" in item[0], persons))
 
 print(*[f"{index};{item[0]};{item[1]};{item[2]}\n" for index, item in enumerate(ipeople)])
